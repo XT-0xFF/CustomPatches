@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Simply More Bridges (Continued)</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- DeepWaterBridgeBase Patch Flammability -->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/TerrainDef[@Name="DeepWaterBridgeBase"]/statBases/Flammability</xpath>
+					<match Class="PatchOperationReplace">
+						<xpath>/Defs/TerrainDef[@Name="DeepWaterBridgeBase"]/statBases/Flammability</xpath>
+						<value>
+							<Flammability>0</Flammability>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/TerrainDef[@Name="DeepWaterBridgeBase"]/statBases</xpath>
+						<value>
+							<Flammability>0</Flammability>
+						</value>
+					</nomatch>
+				</li>
+
+				<!-- HeavyBridgeBase Patch Flammability -->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/TerrainDef[@Name="HeavyBridgeBase"]/statBases/Flammability</xpath>
+					<match Class="PatchOperationReplace">
+						<xpath>/Defs/TerrainDef[@Name="HeavyBridgeBase"]/statBases/Flammability</xpath>
+						<value>
+							<Flammability>0</Flammability>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/TerrainDef[@Name="HeavyBridgeBase"]/statBases</xpath>
+						<value>
+							<Flammability>0</Flammability>
+						</value>
+					</nomatch>
+				</li>
+				
+				<!-- MoreBridgeBase Patch filthAcceptanceMask -->
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/TerrainDef[@Name="MoreBridgeBase"]/filthAcceptanceMask</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/TerrainDef[@Name="MoreBridgeBase"]/filthAcceptanceMask</xpath>
+						<value>
+							<li>Unnatural</li>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/TerrainDef[@Name="MoreBridgeBase"]</xpath>
+						<value>
+							<filthAcceptanceMask>
+								<li>Unnatural</li>
+							</filthAcceptanceMask>
+						</value>
+					</nomatch>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>

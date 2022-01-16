@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+	<!-- Heavy turret -->
+	<ThingDef ParentName="AutocannonTurret">
+		<defName>Turret_Heavy</defName>
+		<label>heavy turret</label>
+		<description>A heavy turret. Its shells do small but powerful areal damage over significant ranges. It cannot fire at close-up targets, and may explode when damaged.</description>
+		<uiIconPath>Things/Building/Heavy/TurretHeavy_MenuIcon</uiIconPath>
+		<altitudeLayer>Building</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>600</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+			<WorkToBuild>40000</WorkToBuild>
+			<Mass>160</Mass>
+			<Beauty>-20</Beauty>
+			<ShootingAccuracyTurret>0.97</ShootingAccuracyTurret>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>6.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>200</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>Shots until reload</fuelLabel>
+				<fuelGizmoLabel>Ammo</fuelGizmoLabel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Shell_ArmorPiercing</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelCapacity>20</fuelCapacity>
+				<initialFuelPercent>0.25</initialFuelPercent>
+				<autoRefuelPercent>0.75</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<minimumFueledThreshold>1</minimumFueledThreshold>
+				<fuelMultiplier>1</fuelMultiplier>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<outOfFuelMessage>Cannot shoot: Needs shells</outOfFuelMessage>
+				<fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+			</li>
+		</comps>
+		<costList>
+			<Steel>400</Steel>
+			<Plasteel>120</Plasteel>
+			<ComponentIndustrial>10</ComponentIndustrial>
+			<Shell_ArmorPiercing>10</Shell_ArmorPiercing>
+		</costList>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Turret_Heavy_Top</turretGunDef>
+			<turretBurstCooldownTime>5.6</turretBurstCooldownTime>
+			<turretTopDrawSize>2.4</turretTopDrawSize>
+			<turretTopOffset>(0, 0.05)</turretTopOffset>
+		</building>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<researchPrerequisites>
+			<li>HeavyTurrets</li>
+			<li>Mortars</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>Turret_Heavy_Top</defName>
+		<label>heavy gun</label>
+		<description>A self-loading heavy gun designed to be attached to a turret.</description>
+		<graphicData>
+			<texPath>Things/Building/Heavy/TurretHeavy_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5,1.5)</drawSize>
+		</graphicData>
+		<statBases>
+			<AccuracyTouch>0.20</AccuracyTouch>
+			<AccuracyShort>0.50</AccuracyShort>
+			<AccuracyMedium>0.80</AccuracyMedium>
+			<AccuracyLong>0.65</AccuracyLong>
+			<RangedWeapon_Cooldown>5.0</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>80</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_HeavyShell</defaultProjectile>
+				<warmupTime>1</warmupTime>
+				<minRange>6</minRange>
+				<range>40</range>
+				<forcedMissRadius>0.1</forcedMissRadius>
+				<ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>Shot_Autocannon</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>15</muzzleFlashScale>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_HeavyShell</defName>
+		<label>shell</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_VeryBig</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<damageDef>Bullet</damageDef><!--Bomb/BombSuper-->
+			<damageAmountBase>35</damageAmountBase>
+			<stoppingPower>6.0</stoppingPower>
+			<armorPenetrationBase>4.00</armorPenetrationBase>
+			<explosionRadius>1.4</explosionRadius>
+			<speed>90</speed>
+			<!--flyOverhead>true</flyOverhead-->
+		</projectile>
+	</ThingDef>
+  
+</Defs>

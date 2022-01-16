@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+	
+	<!--Change Bloodloss consciousness modifier-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="BloodLoss"]/stages/li[label="minor"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.95</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="BloodLoss"]/stages/li[label="moderate"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.80</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="BloodLoss"]/stages/li[label="severe"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.60</postFactor>
+			</li>
+		</value>
+	</Operation>
+	
+	<!--Change ToxicBuildup consciousness modifier-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="ToxicBuildup"]/stages/li[label="initial"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.95</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="ToxicBuildup"]/stages/li[label="minor"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.90</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="ToxicBuildup"]/stages/li[label="moderate"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.85</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="ToxicBuildup"]/stages/li[label="serious"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.75</postFactor>
+			</li>
+		</value>
+	</Operation>
+	
+</Patch>

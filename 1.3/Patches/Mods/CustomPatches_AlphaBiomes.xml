@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Alpha Biomes</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!--Disable filth on Tarmac floors-->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/TerrainDef[defName="AB_TarmacFloor"]</xpath>
+					<value>
+						<filthAcceptanceMask>
+							<li>Unnatural</li>
+						</filthAcceptanceMask>
+					</value>
+				</li>
+				
+				<!--Reduce Tar Shell cost-->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_Shell_Tar"]/costList</xpath>
+					<value>
+						<costList>
+							<Steel>5</Steel>
+							<AB_AsphaltBucket>5</AB_AsphaltBucket>
+						</costList>
+					</value>
+				</li>
+			
+				<!-- Reduce plant sizes -->
+				<!-- Conflagration -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_FirevineTree"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>2~3</visualSizeRange>
+					</value>
+				</li>
+				<!-- Darkness -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_GiantStikehr"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>1.5~3</visualSizeRange>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_GiantSeptimum"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>1~2.5</visualSizeRange>
+					</value>
+				</li>
+				<!-- Graveyard -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_EuphorbiaRimworldia"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>1.5~2</visualSizeRange>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_DeadBowerTree"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>2.5~3.5</visualSizeRange>
+					</value>
+				</li>
+				<!-- Jungle -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_JungleTree"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>2.5~3.5</visualSizeRange>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_RedBugloss"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>1.75~2</visualSizeRange>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_Gomphoeria"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>1.75~2.5</visualSizeRange>
+					</value>
+				</li>
+				<!-- Mycotic -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_GiantAgarilux"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>2~3</visualSizeRange>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_DribblingCap"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>2~3</visualSizeRange>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_RecurvedStropharia"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>2~3</visualSizeRange>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_SlimyPholiota"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>2~3</visualSizeRange>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_AgariluxPrime"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>3~3.5</visualSizeRange>
+					</value>
+				</li>
+				<!-- Slimy -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_SlimyTree"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>1.5~2</visualSizeRange>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_LargeSlimyTree"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>2.5~3.5</visualSizeRange>
+					</value>
+				</li>
+				<!-- Tar Pits -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_Iashiphus"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>1.5~1.75</visualSizeRange>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_SugarFamewort"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>1.5~1.6</visualSizeRange>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_FanPalm"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>2.25~3</visualSizeRange>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_KeeningCordax"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>1.3~2</visualSizeRange>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="AB_RavenNettle"]/plant/visualSizeRange</xpath>
+					<value>
+						<visualSizeRange>0.45~0.6</visualSizeRange>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>

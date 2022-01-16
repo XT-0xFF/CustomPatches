@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Megafauna</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Vegetarian / Omnivore / etc. -->
+			
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Uintatherium"]/race/baseHungerRate</xpath>
+					<value>
+						<baseHungerRate>1.00</baseHungerRate>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Elasmotherium"]/race/baseHungerRate</xpath>
+					<value>
+						<baseHungerRate>0.80</baseHungerRate>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="ShortfacedBear"]/race/baseHungerRate</xpath>
+					<value>
+						<baseHungerRate>0.90</baseHungerRate>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Castoroides"]/race/baseHungerRate</xpath>
+					<value>
+						<baseHungerRate>0.60</baseHungerRate>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Andrewsarchus"]/race/baseHungerRate</xpath>
+					<value>
+						<baseHungerRate>0.75</baseHungerRate>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Megalania"]/race/baseHungerRate</xpath>
+					<value>
+						<baseHungerRate>0.45</baseHungerRate>
+					</value>
+				</li>
+			
+				<!-- Carnivore -->
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Gomphotaria"]/race/baseHungerRate</xpath>
+					<value>
+						<baseHungerRate>0.70</baseHungerRate>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Titanis"]/race/baseHungerRate</xpath>
+					<value>
+						<baseHungerRate>0.45</baseHungerRate>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Palaeeudyptes"]/race/baseHungerRate</xpath>
+					<value>
+						<baseHungerRate>0.40</baseHungerRate>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Smilodon"]/race/baseHungerRate</xpath>
+					<value>
+						<baseHungerRate>0.35</baseHungerRate>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Meganeura"]/race/baseHungerRate</xpath>
+					<value>
+						<baseHungerRate>0.11</baseHungerRate>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>

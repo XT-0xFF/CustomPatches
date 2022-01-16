@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Coal Expanded</li>
+			<li>Coal Expanded (Continued)</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="NECCoalLamp"]/comps/li[@Class="CompProperties_Glower"]/glowRadius</xpath>
+					<value>
+						<glowRadius>10</glowRadius>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="NECCoalLamp"]/comps/li[@Class="CompProperties_Refuelable"]/fuelConsumptionRate</xpath>
+					<value>
+						<fuelConsumptionRate>0.5</fuelConsumptionRate>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>

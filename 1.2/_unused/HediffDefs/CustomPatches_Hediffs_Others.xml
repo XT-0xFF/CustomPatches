@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+	
+	<!--Change Hangover consciousness modifier-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Hangover"]/stages/li[label="slight"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.97</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Hangover"]/stages/li[label="strong"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.92</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Hangover"]/stages/li[label="pounding"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.82</postFactor>
+			</li>
+		</value>
+	</Operation>
+	
+</Patch>

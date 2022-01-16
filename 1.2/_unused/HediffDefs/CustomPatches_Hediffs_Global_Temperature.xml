@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+	
+	<!--Change Heatstroke consciousness modifier-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Heatstroke"]/stages/li[label="initial"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.95</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Heatstroke"]/stages/li[label="minor"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.90</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Heatstroke"]/stages/li[label="serious"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.80</postFactor>
+			</li>
+		</value>
+	</Operation>
+	
+	<!--Change Hypothermia consciousness modifier-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Hypothermia"]/stages/li[label="shivering"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.95</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Hypothermia"]/stages/li[label="minor"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.90</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Hypothermia"]/stages/li[label="serious"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.80</postFactor>
+			</li>
+		</value>
+	</Operation>
+	
+	<!--Change Hypothermic Slowdown consciousness modifier-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="HypothermicSlowdown"]/stages/li[label="minor"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.95</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="HypothermicSlowdown"]/stages/li[label="minor"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.80</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="HypothermicSlowdown"]/stages/li[label="serious"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.60</postFactor>
+			</li>
+		</value>
+	</Operation>
+	
+</Patch>

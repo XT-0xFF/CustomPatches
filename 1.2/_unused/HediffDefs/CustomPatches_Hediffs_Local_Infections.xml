@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>	
+	
+	<!--Change Flu consciousness modifier-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Flu"]/stages/li[label="minor"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.95</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Flu"]/stages/li[label="major"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.90</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Flu"]/stages/li[label="extreme"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.85</postFactor>
+			</li>
+		</value>
+	</Operation>
+	
+	<!--Change Animal_Flu consciousness modifier-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Animal_Flu"]/stages/li[label="minor"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.95</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Animal_Flu"]/stages/li[label="major"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.90</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Animal_Flu"]/stages/li[label="extreme"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.85</postFactor>
+			</li>
+		</value>
+	</Operation>
+	
+	<!--Change Plague consciousness modifier-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Plague"]/stages/li[label="minor"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.95</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Plague"]/stages/li[label="major"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.80</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Plague"]/stages/li[label="extreme"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.70</postFactor>
+			</li>
+		</value>
+	</Operation>
+	
+	<!--Change Animal_Plague consciousness modifier-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Animal_Plague"]/stages/li[label="minor"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.95</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Animal_Plague"]/stages/li[label="major"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.80</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Animal_Plague"]/stages/li[label="extreme"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.70</postFactor>
+			</li>
+		</value>
+	</Operation>
+	
+	<!--Change Malaria consciousness modifier-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Malaria"]/stages/li[label="minor"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.95</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="Malaria"]/stages/li[label="major"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.88</postFactor>
+			</li>
+		</value>
+	</Operation>
+	
+	<!--Change SleepingSickness consciousness modifier-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="SleepingSickness"]/stages/li[label="minor" and not(descendant::minSeverity)]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.98</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="SleepingSickness"]/stages/li[label="minor" and minSeverity="0.4375"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.96</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="SleepingSickness"]/stages/li[label="major"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.85</postFactor>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/HediffDef[defName="SleepingSickness"]/stages/li[label="extreme" and minSeverity="0.875"]/capMods/li[capacity="Consciousness"]</xpath>
+		<value>
+			<li>
+				<capacity>Consciousness</capacity>
+				<postFactor>0.80</postFactor>
+			</li>
+		</value>
+	</Operation>
+	
+</Patch>

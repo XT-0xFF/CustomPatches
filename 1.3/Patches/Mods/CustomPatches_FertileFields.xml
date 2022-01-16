@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Fertile Fields [1.1]</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/RecipeDef[defName="MakeCrushedRocksBlock"]/ingredients/li/count</xpath>
+					<value>
+						<count>2</count>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/RecipeDef[defName="MakeCrushedRocksBlockBulk"]/ingredients/li/count</xpath>
+					<value>
+						<count>20</count>
+					</value>
+				</li>
+			
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Terraform_SoilRich-SoilTilled"]/statBases/WorkToBuild</xpath>
+					<value>
+						<WorkToBuild>100</WorkToBuild>
+					</value>
+				</li>
+			
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="WoodFiredGenerator"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+					<value>
+						<li>PlantScraps</li>
+					</value>
+				</li>
+			
+				<!--change brick color-->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="RFFBricks"]/graphicData/color</xpath>
+					<value>
+						<color>(105,55,42)</color>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="RFFBricks"]/stuffProps/color</xpath>
+					<value>
+						<color>(105,55,42)</color>
+					</value>
+				</li>
+			
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Coal Expanded</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+						
+							<!--enable making fertilizer from biosolids-->
+							<li Class="PatchOperationConditional">
+								<xpath>/Defs/ThingDef[defName="Biosolids"]</xpath>
+								<success>Always</success>
+								<match Class="PatchOperationSequence">
+									<operations>
+									
+										<li Class="PatchOperationAdd"> 
+											<xpath>/Defs/RecipeDef[defName="Make_FertilizerFromBiosolids"]/recipeUsers</xpath>
+											<value>
+												<li>CoalCrematorium</li>
+											</value>
+										</li>
+										<li Class="PatchOperationAdd"> 
+											<xpath>/Defs/RecipeDef[defName="Make_FertilizerFromBiosolidsBulk"]/recipeUsers</xpath>
+											<value>
+												<li>CoalCrematorium</li>
+											</value>
+										</li>
+										<li Class="PatchOperationAdd"> 
+											<xpath>/Defs/RecipeDef[defName="Make_Ash2"]/recipeUsers</xpath>
+											<value>
+												<li>CoalCrematorium</li>
+											</value>
+										</li>
+										<li Class="PatchOperationAdd"> 
+											<xpath>/Defs/RecipeDef[defName="Make_Ash12"]/recipeUsers</xpath>
+											<value>
+												<li>CoalCrematorium</li>
+											</value>
+										</li>
+									
+									</operations>
+								</match>
+							</li>
+						
+							<!--enable compost corpse job for coal crematorium-->
+							<li Class="PatchOperationAdd"> 
+								<xpath>/Defs/RecipeDef[defName="CompostCorpse"]/recipeUsers</xpath>
+								<value>
+									<li>CoalCrematorium</li>
+								</value>
+							</li>
+							
+						</operations>
+					</match>
+				</li>
+			
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Furniture Expanded - Power</li>
+					</mods>
+					<success>Always</success>
+					<match Class="PatchOperationSequence">
+						<operations>
+						
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs/ThingDef[defName="VFE_PortableWoodFiredGenerator"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+								<value>
+									<li>PlantScraps</li>
+								</value>
+							</li>
+						
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs/ThingDef[defName="VFE_IndustrialWoodFiredGenerator"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+								<value>
+									<li>PlantScraps</li>
+								</value>
+							</li>
+						
+						</operations>
+					</match>
+				</li>
+			
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Alpha Biomes</li>
+					</mods>
+					<success>Always</success>
+					<match Class="PatchOperationSequence">
+						<operations>
+						
+							<li Class="PatchOperationAdd"> 
+								<xpath>/Defs/TerrainDef[defName="AB_Tar"]/affordances</xpath>
+								<value>
+									<li>WaterDeep</li>
+								</value>
+							</li>
+						
+						</operations>
+					</match>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>

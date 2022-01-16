@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<!--Increase Autocannon range-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Gun_AutocannonTurret"]/verbs/li/range</xpath>
+		<value>
+			<range>42</range>
+		</value>
+	</Operation>
+	<!--AutocannonTurret-Base minifiable-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="AutocannonTurret" and not(minifiedDef)]</xpath>
+		<value>
+			<minifiedDef>MinifiedThing</minifiedDef>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="AutocannonTurret" and not(thingCategories)]</xpath>
+		<value>
+			<thingCategories>
+			  <li>BuildingsSecurity</li>
+			</thingCategories>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>What the hack?!</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+		
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[@ParentName="AutocannonTurret"]/comps[not(descendant::li[@Class="WhatTheHack.Comps.CompProperties_Mountable"])]</xpath>
+					<value>
+						<li Class="WhatTheHack.Comps.CompProperties_Mountable"></li>
+					</value>
+				</li>
+	
+	
+				<!--
+					VFES
+					VFES_Turret_AutocannonDouble
+					VFES_Turret_TriRocket
+					VFES_Turret_ChargeRailgunTurret
+					VFES_Turret_EMPTurret
+				-->
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Furniture Expanded - Security</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+						
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs/ThingDef[defName="VFES_Turret_AutocannonDouble" or defName="VFES_Turret_TriRocket" or defName="VFES_Turret_ChargeRailgunTurret" or defName="VFES_Turret_EMPTurret"]</xpath>
+								<value>
+									<minifiedDef>MinifiedThing</minifiedDef>
+									<thingCategories>
+									  <li>BuildingsSecurity</li>
+									</thingCategories>
+								</value>
+							</li>
+						
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs/ThingDef[defName="VFES_Turret_AutocannonDouble" or defName="VFES_Turret_TriRocket" or defName="VFES_Turret_ChargeRailgunTurret" or defName="VFES_Turret_EMPTurret"]/comps</xpath>
+								<value>
+									<li Class="WhatTheHack.Comps.CompProperties_Mountable"></li>
+								</value>
+							</li>
+						
+						</operations>
+					</match>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>

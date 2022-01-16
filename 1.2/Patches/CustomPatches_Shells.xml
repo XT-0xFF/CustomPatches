@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<!--Mortar Shell x5 recipe-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="MakeableShellBase"]/recipeMaker</xpath>
+		<value>
+			<bulkRecipeCount>5</bulkRecipeCount>
+		</value>
+	</Operation>
+	<!--Reduce Mortar Shell cost-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Shell_HighExplosive"]/costList</xpath>
+		<value>
+		    <costList>
+			  <Steel>5</Steel>
+			  <Chemfuel>3</Chemfuel>
+			</costList>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Shell_Incendiary"]/costList</xpath>
+		<value>
+		    <costList>
+			  <Steel>4</Steel>
+			  <Chemfuel>4</Chemfuel>
+			</costList>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Shell_EMP"]/costList</xpath>
+		<value>
+		    <costList>
+			  <Steel>5</Steel>
+			  <ComponentIndustrial>1</ComponentIndustrial>
+			</costList>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Shell_Firefoam"]/costList</xpath>
+		<value>
+		    <costList>
+			  <Steel>7</Steel>
+			</costList>
+		</value>
+	</Operation>
+	
+</Patch>

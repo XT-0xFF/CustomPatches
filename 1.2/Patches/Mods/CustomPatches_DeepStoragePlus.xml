@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Deep Storage Plus</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="DSP_Bin"]/researchPrerequisites/li</xpath>
+					<value>
+						<li>ComplexFurniture</li>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>

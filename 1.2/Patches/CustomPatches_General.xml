@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!--Widen the range at which factions may spawn-->
+	<!--Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/FactionDef/allowedArrivalTemperatureRange</xpath>
+				<success>Normal</success>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/FactionDef/allowedArrivalTemperatureRange</xpath>
+				<value>
+					<allowedArrivalTemperatureRange>
+						<min>-100</min>
+						<max>100</max>
+					</allowedArrivalTemperatureRange>
+				</value>
+			</li>
+		</operations>
+	</Operation-->
+
+	<!--Disable Sappers-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/RaidStrategyDef[defName="ImmediateAttackSappers"]/selectionWeightPerPointsCurve/points</xpath>
+		<value>
+			<points>
+				<li>(100,  0.00)</li>
+			</points>
+		</value>
+	</Operation>
+	
+	<!--Disable Sieges-->
+	<!--Operation Class="PatchOperationReplace">
+		<xpath>/Defs/RaidStrategyDef[defName="Siege"]/selectionWeightPerPointsCurve/points</xpath>
+		<value>
+			<points>
+				<li>(100,  0.00)</li>
+			</points>
+		</value>
+	</Operation-->
+	
+	
+	<!--Make humanoid torsos sturdier-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/BodyPartDef[defName="Torso"]/hitPoints</xpath>
+		<value>
+			<hitPoints>80</hitPoints>
+		</value>
+	</Operation>
+
+	<!--Make humans fatty food sponges-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/LifeStageDef[defName="HumanlikeAdult"]</xpath>
+		<value>
+			<foodMaxFactor>2.0</foodMaxFactor>
+		</value>
+	</Operation>
+	
+
+	<!--Make trees live very long-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[@Name="TreeBase"]/plant/lifespanDaysPerGrowDays</xpath>
+		<value>
+			<lifespanDaysPerGrowDays>30</lifespanDaysPerGrowDays>
+		</value>
+	</Operation>
+	
+	<!--Severly reduce market value of Kibble-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Kibble"]/statBases/MarketValue</xpath>
+		<value>
+			<MarketValue>0.1</MarketValue>
+		</value>
+	</Operation>
+	
+	<!--Reduce Chemfuel Work Amount-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/RecipeDef[defName="Make_ChemfuelFromWood" or defName="Make_ChemfuelFromOrganics" or defName="Make_ChemfuelFromCoal" or defName="Make_ChemfuelFromFecalSludge"]/workAmount</xpath>
+		<value>
+			<workAmount>400</workAmount>
+		</value>
+	</Operation>
+	
+	<!--Increase Steel durability-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Steel"]/stuffProps/statFactors/MaxHitPoints</xpath>
+		<value>
+			<MaxHitPoints>1.5</MaxHitPoints>
+		</value>
+	</Operation>
+
+	<!--Make steel slag chunks deteriorate-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="ChunkSlagSteel"]/statBases</xpath>
+		<value>
+			<DeteriorationRate>1</DeteriorationRate>
+		</value>
+	</Operation>
+	
+	<!--Severely reduce fuel consumption rate of torches-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="TorchLamp"]/comps/li[@Class="CompProperties_Refuelable"]/fuelConsumptionRate</xpath>
+		<value>
+			<fuelConsumptionRate>1</fuelConsumptionRate>
+		</value>
+	</Operation>
+	
+	
+	<!--Reduce Inferno Cannon explosion radius-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Bullet_InfernoCannon"]/projectile/explosionRadius</xpath>
+		<value>
+			<explosionRadius>1.2</explosionRadius>
+		</value>
+	</Operation>
+	<!--Increase centipede spawn cost-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/PawnKindDef[defName="Mech_Centipede"]/combatPower</xpath>
+		<value>
+			<combatPower>800</combatPower>
+		</value>
+	</Operation>
+	
+	
+	<!--Add explosion sound to Frostbite-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/DamageDef[defName="Frostbite"]</xpath>
+		<value>
+			<soundExplosion>Explosion_Flame</soundExplosion>
+		</value>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>MendAndRecycle</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!--somehow this works for now...-->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/WorkGiverDef[defName="DoBillsMakeWeapons" or defName="DoBillsMachiningTable"]/giverClass</xpath>
+					<value>
+						<giverClass>MendAndRecycle.WorkGiver_DoBill</giverClass>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/RecipeDef[defName="MendSimpleApparel"]</xpath>
+					<value>
+						<recipeUsers>
+							<li>TableMending</li>
+							<li>ElectricTailoringBench</li>
+							<li>HandTailoringBench</li>
+						</recipeUsers>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/RecipeDef[defName="MendSimpleWeapon"]</xpath>
+					<value>
+						<recipeUsers>
+							<li>TableMending</li>
+							<li>FueledSmithy</li>
+							<li>ElectricSmithy</li>
+						</recipeUsers>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/RecipeDef[defName="MendComplexApparel" or defName="MendComplexWeapon"]</xpath>
+					<value>
+						<recipeUsers>
+							<li>TableMending</li>
+							<li>TableMachining</li>
+						</recipeUsers>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>
