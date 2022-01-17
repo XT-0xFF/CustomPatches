@@ -118,17 +118,31 @@ namespace CustomPatches
 				var reqTotal = reqTotalAll[thingDef];
 				if (reqTotal > invTotal)
 				{
+					var pawns = reqCountPawn.Keys.ToList();
 					var ratio = invTotal / (float)reqTotal;
 					var remainder = invTotal;
-					foreach (var pawn in reqCountPawn.Keys.ToList())
+					foreach (var pawn in pawns)
 					{
-						var count = (int)Mathf.Round(reqCountPawn[pawn] * ratio);
-						reqCountPawn[pawn] = count;
-						remainder -= count;
+						var amount = (int)(reqCountPawn[pawn] * ratio);
+						reqCountPawn[pawn] = amount;
+						remainder -= amount;
 					}
-#warning TODO quite sure there's still a bug here, test: req 100, 100, 100, 0 - inv 0, 0, 0, 1 -> should end with remainder 1
-					if (remainder != 0)
-						Log.Warning($"Remainder ({remainder}) was not 0 after limiting distribution for {thingDef}; {reqTotal} was required, {invTotal} available, ratio is {ratio}");
+					var total = 0;
+					foreach (var pawn in pawns)
+					{
+						var amount = reqCountPawn[pawn];
+						if (remainder > 0)
+						{
+							amount += 1;
+							remainder--;
+						}
+						if (amount == 0)
+							reqCountPawn.Remove(pawn);
+						else
+							total += amount;
+					}
+					if (total != invTotal)
+						Log.Warning($"Total ({total}) was not equal invTotal ({invTotal}) for {thingDef}; remainder is {remainder}, {reqTotal} was required, ratio is {ratio}");
 
 					//Log.Message($"- limiting (reqTotal > invTotal)");
 					//foreach (var pair in reqCountPawns[thingDef])
@@ -177,14 +191,11 @@ namespace CustomPatches
 				}
 			}
 
-			// sort list so that non-colonists are iterated over first
-			invThingDef.OrderBy((p) => p.Key.IsColonist ? 1 : 0);
-
 			//Log.Message($"--- Looking for {thingDef}");
 
 			// get pawns requiring thingDef and pawns with thingDef in their inventory as lists as to not cause problems when removing entries while iterating
 			var reqPawns = reqThingDef.Keys.ToList();
-			var invPawns = invThingDef.Keys.ToList();
+			var invPawns = invThingDef.Keys.OrderBy((p) => p.IsColonist).ToList();
 
 			// iterate over pawns requiring thingDef
 			for (int i = 0; i < reqPawns.Count;)
@@ -247,6 +258,10 @@ namespace CustomPatches
 					if (req == 0)
 						break;
 				}
+
+				// make sure all required items have been distributed
+				if (req != 0)
+					Log.Error($"Error trying to distribute item {thingDef.defName} between pawns; {nameof(req)} != 0: {req} for {reqPawn}");
 			}
 		}
 
@@ -259,7 +274,7 @@ namespace CustomPatches
 				if (thing.def == thingDef)
 				{
 					var c = Mathf.Min(remainder, thing.stackCount);
-					Log.Message($"Tranferring {c} / {thing.stackCount} of {thing} ({thingDef}) from {thing.holdingOwner.Owner} to {reqPawn}");
+					Log.Message($"Tranferring {c} / {thing.stackCount} of {thing} ({thingDef}) from {invPawn} to {reqPawn}");
 					thing.holdingOwner.TryTransferToContainer(thing, reqPawn.inventory.innerContainer, c);
 
 					if (c == thing.stackCount)
@@ -271,7 +286,7 @@ namespace CustomPatches
 				}
 			}
 			if (remainder > 0)
-				Log.Error($"TransferThing could not find enough items to transfer for {thingDef} on {invPawn}; {remainder} out of {count} left");
+				Log.Error($"{nameof(TransferRequired)} could not find enough items to transfer for {thingDef} on {invPawn}; {remainder} out of {count} left");
 		}
 		private static Dictionary<ThingDef, int> GetAllRequired(this Pawn pawn)
 		{
