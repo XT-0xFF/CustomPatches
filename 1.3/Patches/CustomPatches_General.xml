@@ -139,38 +139,7 @@
 	</Operation>
 	
 	
-	<!--Reduce (Anima Tree [defName="Plant_TreeAnima"]) no-building radius-->
-	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_ArtificialBuildings"]/radius</xpath>
-		<value>
-			<radius>9.9</radius>
-		</value>
-	</Operation>
-	
-	<!-- Make anima grass live extremely long -->
-	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="Plant_GrassAnima"]/plant/lifespanDaysPerGrowDays</xpath>
-		<value>
-			<lifespanDaysPerGrowDays>120</lifespanDaysPerGrowDays>
-		</value>
-	</Operation>
-	
-	<!-- Remove negative mood effects from expectations -->
-	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThoughtDef[defName="Expectations"]/stages/li[label="noble expectations" or label="royal expectations" or label="elite expectations" or label="supreme expectations"]/baseMoodEffect</xpath>
-		<value>
-			<baseMoodEffect>0</baseMoodEffect>
-		</value>
-	</Operation>
-	
-	<!-- Remove disabled work types from ideology roles -->
-	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/PreceptDef/roleDisabledWorkTags</xpath>
-		<value>
-			<roleDisabledWorkTags/>
-		</value>
-	</Operation>
-	
+	<!-- Reduce room space requirements -->
 	<Operation Class="PatchOperationReplace">
 		<xpath>/Defs/RoomStatDef[defName="Space"]/scoreStages</xpath>
 		<value>
