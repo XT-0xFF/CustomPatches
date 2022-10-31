@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>A Dog Said... Animal Prosthetics</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Expanded Prosthetics and Organ Engineering</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+				
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs/TraderKindDef[defName="ProsthesesTrader"]/stockGenerators</xpath>
+								<value>
+									<li Class="StockGenerator_Tag">
+										<tradeTag>AnimalBionics</tradeTag>
+										<thingDefCountRange>0~6</thingDefCountRange>
+										<countRange>1~4</countRange>
+									</li>
+								</value>
+							</li>
+				
+						</operations>
+					</match>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>

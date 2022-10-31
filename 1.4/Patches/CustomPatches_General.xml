@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!--Widen the temperature range at which factions may spawn-->
+	<!--Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/FactionDef/allowedArrivalTemperatureRange</xpath>
+				<success>Normal</success>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/FactionDef/allowedArrivalTemperatureRange</xpath>
+				<value>
+					<allowedArrivalTemperatureRange>
+						<min>-100</min>
+						<max>100</max>
+					</allowedArrivalTemperatureRange>
+				</value>
+			</li>
+		</operations>
+	</Operation-->
+
+	<!--Disable Sappers-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/RaidStrategyDef[defName="ImmediateAttackSappers"]/selectionWeightPerPointsCurve/points</xpath>
+		<value>
+			<points>
+				<li>(100,  0.00)</li>
+			</points>
+		</value>
+	</Operation>
+	
+	<!--Disable Sieges-->
+	<!--Operation Class="PatchOperationReplace">
+		<xpath>/Defs/RaidStrategyDef[defName="Siege"]/selectionWeightPerPointsCurve/points</xpath>
+		<value>
+			<points>
+				<li>(100,  0.00)</li>
+			</points>
+		</value>
+	</Operation-->
+	
+
+	<!--Make humans fatty food sponges-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/LifeStageDef[defName="HumanlikeAdult"]</xpath>
+		<value>
+			<foodMaxFactor>1.5</foodMaxFactor>
+		</value>
+	</Operation>
+	
+	
+	<!--Change Gold's color-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Gold"]/stuffProps/color</xpath>
+		<value>
+			<color>(242,207,128)</color>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/TerrainDef[defName="GoldTile"]/color</xpath>
+		<value>
+			<color>(0.81, 0.69, 0.43)</color>
+		</value>
+	</Operation>
+
+	
+	<!--Make trees live very long-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[@Name="TreeBase"]/plant/lifespanDaysPerGrowDays</xpath>
+		<value>
+			<lifespanDaysPerGrowDays>30</lifespanDaysPerGrowDays>
+		</value>
+	</Operation>
+	
+	<!--Severely reduce market value of Kibble-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Kibble"]/statBases/MarketValue</xpath>
+		<value>
+			<MarketValue>0.1</MarketValue>
+		</value>
+	</Operation>
+	
+	<!--Reduce Chemfuel & Smelting Work Amount-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/RecipeDef[defName="Make_ChemfuelFromWood" or defName="Make_ChemfuelFromOrganics" or defName="Make_ChemfuelFromCoal" or defName="Make_ChemfuelFromFecalSludge" or defName="SmeltWeapon" or defName="SmeltApparel"]/workAmount</xpath>
+		<value>
+			<workAmount>400</workAmount>
+		</value>
+	</Operation>
+	
+	<!--Increase Steel durability-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Steel"]/stuffProps/statFactors/MaxHitPoints</xpath>
+		<value>
+			<MaxHitPoints>1.5</MaxHitPoints>
+		</value>
+	</Operation>
+
+	<!--Make steel slag chunks deteriorate-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="ChunkSlagSteel"]/statBases</xpath>
+		<value>
+			<DeteriorationRate>1</DeteriorationRate>
+		</value>
+	</Operation>
+	
+	<!--Severely reduce fuel consumption rate of torches-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="TorchLamp" or defName="Darktorch" or defName="DarktorchFungus" or defName="VFEM_WallTorchLamp"]/comps/li[@Class="CompProperties_Refuelable"]/fuelConsumptionRate</xpath>
+		<value>
+			<fuelConsumptionRate>1</fuelConsumptionRate>
+		</value>
+	</Operation>
+	
+	
+	<!--Reduce Inferno Cannon explosion radius-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Bullet_InfernoCannon"]/projectile/explosionRadius</xpath>
+		<value>
+			<explosionRadius>1.6</explosionRadius>
+		</value>
+	</Operation>
+	
+	
+	<!--Add explosion sound to Frostbite-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/DamageDef[defName="Frostbite"]</xpath>
+		<value>
+			<soundExplosion>Explosion_Flame</soundExplosion>
+		</value>
+	</Operation>
+	
+	
+	<!-- Reduce room space requirements -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/RoomStatDef[defName="Space"]/scoreStages</xpath>
+		<value>
+			<scoreStages>
+				<li>
+					<label>cramped</label>
+				</li>
+				<li>
+					<minScore>5.5</minScore><!--2x3-->
+					<label>rather tight</label>
+				</li>
+				<li>
+					<minScore>8.5</minScore><!--3x3-->
+					<label>average-sized</label>
+				</li>
+				<li>
+					<minScore>19.5</minScore><!--4x5-->
+					<label>somewhat spacious</label>
+				</li>
+				<li>
+					<minScore>41.5</minScore><!--6x7-->
+					<label>quite spacious</label>
+				</li>
+				<li>
+					<minScore>89.5</minScore><!--9x10-->
+					<label>very spacious</label>
+				</li>
+				<li>
+					<minScore>209.5</minScore><!--14x15-->
+					<label>extremely spacious</label>
+				</li>
+			</scoreStages>
+		</value>
+	</Operation>
+	
+</Patch>

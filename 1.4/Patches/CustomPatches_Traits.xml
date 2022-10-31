@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!--Reduce commonality of Misandrist trait-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/TraitDef[defName="DislikesMen"]/commonalityFemale</xpath>
+		<value>
+			<commonalityFemale>0.6</commonalityFemale>
+		</value>
+	</Operation>
+
+	<!--Reduce commonality of Misogynist trait-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/TraitDef[defName="DislikesWomen"]/commonality</xpath>
+		<value>
+			<commonality>0.6</commonality>
+		</value>
+	</Operation>
+	
+</Patch>

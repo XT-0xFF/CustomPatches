@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Simply More Bridges (Continued)</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+		
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<TerrainDef ParentName="HeavyBridgeStoneBase">
+							<defName>HBTileHeavyBridgeSandstone</defName>
+							<label>sandstone bridge (Herringbone)</label>
+							<texturePath>Terrain/Surfaces/HerringboneTileStone</texturePath>
+							<color>(126,104,94)</color>
+							
+							<statBases>
+								<Beauty>2</Beauty>
+							</statBases>
+							<costList>
+								<BlocksSandstone>10</BlocksSandstone>
+								<Steel>3</Steel>
+							</costList>
+						</TerrainDef>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<TerrainDef ParentName="DeepWaterBridgeStoneBase">
+							<defName>HBTileDeepWaterBridgeSandstone</defName>
+							<label>sandstone deep water bridge (Herringbone)</label>
+							<texturePath>Terrain/Surfaces/HerringboneTileStone</texturePath>
+							<color>(126,104,94)</color>
+							
+							<statBases>
+								<Beauty>2</Beauty>
+							</statBases>
+							<costList>
+								<BlocksSandstone>10</BlocksSandstone>
+								<Steel>3</Steel>
+							</costList>
+						</TerrainDef>
+					</value>
+				</li>
+		
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<TerrainDef ParentName="HeavyBridgeStoneBase">
+							<defName>HBTileHeavyBridgeGranite</defName>
+							<label>granite bridge (Herringbone)</label>
+							<texturePath>Terrain/Surfaces/HerringboneTileStone</texturePath>
+							<color>(105,95,97)</color>
+							
+							<statBases>
+								<Beauty>2</Beauty>
+							</statBases>
+							<costList>
+								<BlocksGranite>10</BlocksGranite>
+								<Steel>3</Steel>
+							</costList>
+						</TerrainDef>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<TerrainDef ParentName="DeepWaterBridgeStoneBase">
+							<defName>HBTileDeepWaterBridgeGranite</defName>
+							<label>granite deep water bridge (Herringbone)</label>
+							<texturePath>Terrain/Surfaces/HerringboneTileStone</texturePath>
+							<color>(105,95,97)</color>
+							
+							<statBases>
+								<Beauty>2</Beauty>
+							</statBases>
+							<costList>
+								<BlocksGranite>10</BlocksGranite>
+								<Steel>3</Steel>
+							</costList>
+						</TerrainDef>
+					</value>
+				</li>
+		
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<TerrainDef ParentName="HeavyBridgeStoneBase">
+							<defName>HBTileHeavyBridgeLimestone</defName>
+							<label>limestone bridge (Herringbone)</label>
+							<texturePath>Terrain/Surfaces/HerringboneTileStone</texturePath>
+							<color>(158,153,135)</color>
+							
+							<statBases>
+								<Beauty>2</Beauty>
+							</statBases>
+							<costList>
+								<BlocksLimestone>10</BlocksLimestone>
+								<Steel>3</Steel>
+							</costList>
+						</TerrainDef>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<TerrainDef ParentName="DeepWaterBridgeStoneBase">
+							<defName>HBTileDeepWaterBridgeLimestone</defName>
+							<label>limestone deep water bridge (Herringbone)</label>
+							<texturePath>Terrain/Surfaces/HerringboneTileStone</texturePath>
+							<color>(158,153,135)</color>
+							
+							<statBases>
+								<Beauty>2</Beauty>
+							</statBases>
+							<costList>
+								<BlocksLimestone>10</BlocksLimestone>
+								<Steel>3</Steel>
+							</costList>
+						</TerrainDef>
+					</value>
+				</li>
+		
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<TerrainDef ParentName="HeavyBridgeStoneBase">
+							<defName>HBTileHeavyBridgeSlate</defName>
+							<label>slate bridge (Herringbone)</label>
+							<texturePath>Terrain/Surfaces/HerringboneTileStone</texturePath>
+							<color>(100,100,100)</color>
+							
+							<statBases>
+								<Beauty>2</Beauty>
+							</statBases>
+							<costList>
+								<BlocksSlate>10</BlocksSlate>
+								<Steel>3</Steel>
+							</costList>
+						</TerrainDef>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<TerrainDef ParentName="DeepWaterBridgeStoneBase">
+							<defName>HBTileDeepWaterBridgeSlate</defName>
+							<label>slate deep water bridge (Herringbone)</label>
+							<texturePath>Terrain/Surfaces/HerringboneTileStone</texturePath>
+							<color>(100,100,100)</color>
+							
+							<statBases>
+								<Beauty>2</Beauty>
+							</statBases>
+							<costList>
+								<BlocksSlate>10</BlocksSlate>
+								<Steel>3</Steel>
+							</costList>
+						</TerrainDef>
+					</value>
+				</li>
+		
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<TerrainDef ParentName="HeavyBridgeStoneBase">
+							<defName>HBTileHeavyBridgeMarble</defName>
+							<label>marble bridge (Herringbone)</label>
+							<texturePath>Terrain/Surfaces/HerringboneTileStone</texturePath>
+							<color>(132,135,132)</color>
+							
+							<statBases>
+								<Beauty>2</Beauty>
+							</statBases>
+							<costList>
+								<BlocksMarble>10</BlocksMarble>
+								<Steel>3</Steel>
+							</costList>
+						</TerrainDef>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<TerrainDef ParentName="DeepWaterBridgeStoneBase">
+							<defName>HBTileDeepWaterBridgeMarble</defName>
+							<label>marble deep water bridge (Herringbone)</label>
+							<texturePath>Terrain/Surfaces/HerringboneTileStone</texturePath>
+							<color>(132,135,132)</color>
+							
+							<statBases>
+								<Beauty>2</Beauty>
+							</statBases>
+							<costList>
+								<BlocksMarble>10</BlocksMarble>
+								<Steel>3</Steel>
+							</costList>
+						</TerrainDef>
+					</value>
+				</li>
+
+				
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Fertile Fields [1.1]</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+					
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs</xpath>
+								<value>
+									<TerrainDef ParentName="HeavyBridgeStoneBase">
+										<defName>TileHeavyBridgeBrick</defName>
+										<label>brick bridge (StoneTile)</label>
+										<texturePath>Stuff/RFF_TileBricks</texturePath>
+										
+										<statBases>
+											<Beauty>1</Beauty>
+										</statBases>
+										<costList>
+											<RFFBricks>8</RFFBricks>
+											<Steel>3</Steel>
+										</costList>
+									</TerrainDef>
+								</value>
+							</li>
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs</xpath>
+								<value>
+									<TerrainDef ParentName="DeepWaterBridgeStoneBase">
+										<defName>TileDeepWaterBridgeBrick</defName>
+										<label>brick deep water bridge (StoneTile)</label>
+										<texturePath>Stuff/RFF_TileBricks</texturePath>
+										
+										<statBases>
+											<Beauty>1</Beauty>
+										</statBases>
+										<costList>
+											<RFFBricks>8</RFFBricks>
+											<Steel>3</Steel>
+										</costList>
+									</TerrainDef>
+								</value>
+							</li>
+					
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs</xpath>
+								<value>
+									<TerrainDef ParentName="HeavyBridgeStoneBase">
+										<defName>HBTileHeavyBridgeBrick</defName>
+										<label>brick bridge (Herringbone)</label>
+										<texturePath>Stuff/RFF_HerringboneBricks</texturePath>
+										
+										<statBases>
+											<Beauty>2</Beauty>
+										</statBases>
+										<costList>
+											<RFFBricks>10</RFFBricks>
+											<Steel>3</Steel>
+										</costList>
+									</TerrainDef>
+								</value>
+							</li>
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs</xpath>
+								<value>
+									<TerrainDef ParentName="DeepWaterBridgeStoneBase">
+										<defName>HBTileDeepWaterBridgeBrick</defName>
+										<label>brick deep water bridge (Herringbone)</label>
+										<texturePath>Stuff/RFF_HerringboneBricks</texturePath>
+										
+										<statBases>
+											<Beauty>2</Beauty>
+										</statBases>
+										<costList>
+											<RFFBricks>10</RFFBricks>
+											<Steel>3</Steel>
+										</costList>
+									</TerrainDef>
+								</value>
+							</li>
+							
+						</operations>
+					</match>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>

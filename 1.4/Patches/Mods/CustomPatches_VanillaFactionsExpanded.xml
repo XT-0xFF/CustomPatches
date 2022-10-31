@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Insectoids</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!--Armillarix: faster growth rate-->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="VFEI_Plant_Armillarix"]/plant/growDays</xpath>
+					<value>
+						<growDays>3</growDays>
+					</value>
+				</li>
+				<!--Armillarix: live longer-->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="VFEI_Plant_Armillarix"]/plant</xpath>
+					<value>
+						<lifespanDaysPerGrowDays>60</lifespanDaysPerGrowDays>
+					</value>
+				</li>
+				<!--Armillarix: increase glow radius-->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="VFEI_Plant_Armillarix"]/comps/li[@Class="CompProperties_Glower"]/glowRadius</xpath>
+					<value>
+						<glowRadius>4</glowRadius>
+					</value>
+				</li>
+				<!--Armillarix: remove harvestability so it won't be harvested-->
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ThingDef[defName="VFEI_Plant_Armillarix"]/plant/harvestTag</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ThingDef[defName="VFEI_Plant_Armillarix"]/plant/harvestedThingDef</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ThingDef[defName="VFEI_Plant_Armillarix"]/plant/harvestYield</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ThingDef[defName="VFEI_Plant_Armillarix"]/plant/purpose</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ThingDef[defName="VFEI_Plant_Armillarix"]/plant/immatureGraphicPath</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ThingDef[defName="VFEI_Plant_Armillarix"]/ingestible</xpath>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Settlers</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Chemlamp"]/comps/li[@Class="CompProperties_Refuelable"]/fuelConsumptionRate</xpath>
+					<value>
+						<fuelConsumptionRate>0.25</fuelConsumptionRate>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="ChemlampPost"]/comps/li[@Class="CompProperties_Refuelable"]/fuelConsumptionRate</xpath>
+					<value>
+						<fuelConsumptionRate>0.25</fuelConsumptionRate>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Weapon Tech 1.1</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+						
+							<!--Make Dynamite craftable again-->
+							<li Class="PatchOperationAdd">
+								<xpath>/Defs/ThingDef[defName = "VFES_Weapon_GrenadeDynamite"]</xpath>
+								<value>
+									<recipeMaker>
+										<recipeUsers>
+											<li>DrugLab</li>
+										</recipeUsers>
+										<researchPrerequisite>DrugProduction</researchPrerequisite>
+									</recipeMaker>
+								</value>
+							</li>
+							
+						</operations>
+					</match>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Mechanoids</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+						
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs</xpath>
+					<value>
+						<ThingCategoryDef>
+							<defName>RoughPlantFoodRaw</defName>
+							<label>rough vegetarian</label>
+							<parent>Foods</parent>
+							<iconPath>UI/Icons/ThingCategories/PlantFoodRaw</iconPath>
+						</ThingCategoryDef>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Hay"]/thingCategories</xpath>
+					<value>
+						<thingCategories>
+							<li>RoughPlantFoodRaw</li>
+						</thingCategories>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Fertile Fields [1.1]</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+						
+							<li Class="PatchOperationReplace">
+								<xpath>/Defs/ThingDef[defName="PlantScraps"]/thingCategories</xpath>
+								<value>
+									<thingCategories>
+										<li>RoughPlantFoodRaw</li>
+									</thingCategories>
+								</value>
+							</li>
+							
+						</operations>
+					</match>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ItemProcessor.CombinationDef[defName="VFEM_ProvisionsPackagingFactory_ConveyorOven_Kibble"]/secondItems</xpath>
+					<value>
+						<secondItems>
+							<li>RoughPlantFoodRaw</li>
+						</secondItems>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ItemProcessor.CombinationDef[defName="VFEM_ProvisionsPackagingFactory_ConveyorOven_Kibble"]/singleTimeIfNotQualityIncreasing</xpath>
+					<value>
+						<singleTimeIfNotQualityIncreasing>0.02</singleTimeIfNotQualityIncreasing>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>

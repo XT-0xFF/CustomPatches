@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Weapons Expanded</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Crossbow -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName = "VWE_Bow_Crossbow"]/statBases/RangedWeapon_Cooldown</xpath>
+					<value>
+						<RangedWeapon_Cooldown>2.8</RangedWeapon_Cooldown>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName = "VWE_Bow_Crossbow"]/verbs/li/warmupTime</xpath>
+					<value>
+						<warmupTime>0.6</warmupTime>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName = "VWE_Bow_Crossbow"]/verbs/li/range</xpath>
+					<value>
+						<range>31.9</range>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName = "VWE_Arrow_Bolt"]/projectile/damageAmountBase</xpath>
+					<value>
+						<damageAmountBase>22</damageAmountBase>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName = "VWE_Arrow_Bolt"]/projectile/armorPenetrationBase</xpath>
+					<value>
+						<armorPenetrationBase>0.36</armorPenetrationBase>
+					</value>
+				</li>
+			
+				<!-- Musket -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName = "VWE_Gun_Musket"]/statBases/RangedWeapon_Cooldown</xpath>
+					<value>
+						<RangedWeapon_Cooldown>2.8</RangedWeapon_Cooldown>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName = "VWE_Gun_Musket"]/verbs/li/range</xpath>
+					<value>
+						<range>33.9</range>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName = "Bullet_Leadball"]/projectile/damageAmountBase</xpath>
+					<value>
+						<damageAmountBase>24</damageAmountBase>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Medieval</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<!-- Crossbow -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName = "VFEM_Bow_HeavyCrossbow"]/statBases/RangedWeapon_Cooldown</xpath>
+					<value>
+						<RangedWeapon_Cooldown>3.4</RangedWeapon_Cooldown>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName = "VFEM_Bow_HeavyCrossbow"]/verbs/li/range</xpath>
+					<value>
+						<range>31.9</range>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName = "VFEM_Bow_HeavyCrossbow"]/verbs/li/warmupTime</xpath>
+					<value>
+						<warmupTime>0.8</warmupTime>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName = "VFEM_Arrow_HeavyBolt"]/projectile/armorPenetrationBase</xpath>
+					<value>
+						<armorPenetrationBase>0.44</armorPenetrationBase>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+
+    <!--Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Vikings</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				
+			</operations>
+		</match>
+	</Operation-->
+	
+</Patch>

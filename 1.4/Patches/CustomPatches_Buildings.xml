@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<!--Increase pod launcher fuel-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="PodLauncher"]/comps/li[@Class="CompProperties_Refuelable"]/fuelCapacity</xpath>
+		<value>
+			<fuelCapacity>2000.0</fuelCapacity>
+		</value>
+	</Operation>
+	
+	
+	<!--Make CommsConsole minifiable-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="CommsConsole"]</xpath>
+		<value>
+			<minifiedDef>MinifiedThing</minifiedDef>
+			<thingCategories>
+				<li>BuildingsMisc</li>
+			</thingCategories>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="CommsConsole"]/statBases</xpath>
+		<value>
+			<Mass>25</Mass>
+		</value>
+	</Operation>
+	
+	<!--Make Ground Penetrating Scanner minifiable-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="GroundPenetratingScanner"]</xpath>
+		<value>
+			<minifiedDef>MinifiedThing</minifiedDef>
+			<thingCategories>
+				<li>BuildingsMisc</li>
+			</thingCategories>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="GroundPenetratingScanner"]/statBases</xpath>
+		<value>
+			<Mass>25</Mass>
+		</value>
+	</Operation>
+	
+	<!--Make Long Range Mineral Scanner minifiable-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="LongRangeMineralScanner"]</xpath>
+		<value>
+			<minifiedDef>MinifiedThing</minifiedDef>
+			<thingCategories>
+				<li>BuildingsMisc</li>
+			</thingCategories>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="LongRangeMineralScanner"]/statBases</xpath>
+		<value>
+			<Mass>25</Mass>
+		</value>
+	</Operation>
+	
+	
+	<!--Replace Hydroponic tag-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[building/sowTag="Hydroponic"]/building/sowTag</xpath>
+		<value>
+		  <sowTag>Ground</sowTag>
+		</value>
+	</Operation>
+	
+	<!--Add Hydroponics sunlamp-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="HydroponicsBasin"]/comps/li[@Class="CompProperties_Power"]</xpath>
+		<value>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>120</basePowerConsumption>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="HydroponicsBasin"]/comps</xpath>
+		<value>
+			<li Class="CompProperties_Glower"> <!--causes brightly lit area around it, but better than before at least-->
+				<overlightRadius>3.6</overlightRadius>
+				<glowRadius>3.6</glowRadius>
+				<glowColor>(370,370,370,0)</glowColor>
+			</li>
+		</value>
+	</Operation>
+	
+	<!--Add Tilable Hydroponics sunlamp-->
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Furniture Expanded - Farming</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="VFE_Hydroponics_Tilable"]/comps/li[@Class="CompProperties_Power"]</xpath>
+					<value>
+						<li Class="CompProperties_Power">
+							<compClass>CompPowerTrader</compClass>
+							<basePowerConsumption>30</basePowerConsumption>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="VFE_Hydroponics_Tilable"]/comps</xpath>
+					<value>
+						<li Class="CompProperties_Glower">
+							<overlightRadius>1.5</overlightRadius>
+							<glowRadius>1.5</glowRadius>
+							<glowColor>(370,370,370,0)</glowColor>
+						</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+	
+	<!--Increase Transport Pod mass limit-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="TransportPod"]/comps/li[@Class="CompProperties_Transporter"]</xpath>
+		<value>
+			<massCapacity>250</massCapacity>
+		</value>
+	</Operation>
+	
+	
+	<Operation Class="PatchOperationAttributeAdd">
+		<xpath>/Defs/ThingDef[defName="GrandThrone"]</xpath>
+		<attribute>Name</attribute>
+		<value>GrandThroneBase</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs</xpath>
+		<value>
+			<ThingDef ParentName="GrandThroneBase">
+				<defName>GrandThroneSilver</defName>
+				<label>grand meditation throne</label>
+				<costList>
+					<Silver>75</Silver>
+				</costList>
+				<graphicData>
+					<drawSize>(4,4)</drawSize>
+					<texPath>Things/Building/Furniture/GrandThroneSilver</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<shaderType>CutoutComplex</shaderType>
+					<shadowData>
+						<volume>(2.1,0.5,1.5)</volume>
+					</shadowData>
+					<damageData>
+						<rect>(0.1,0.1,2.8,1.8)</rect>
+					</damageData>
+				</graphicData>
+			</ThingDef>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/RoyalTitleDef/throneRoomRequirements/li[@Class="RoomRequirement_HasAssignedThroneAnyOf"]/things[li="GrandThrone"]</xpath>
+		<value>
+			<li>GrandThroneSilver</li>
+		</value>
+	</Operation>
+	
+</Patch>

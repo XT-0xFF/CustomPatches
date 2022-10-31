@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>LWM's Deep Storage</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="LWM_Meat_Hook"]/costStuffCount</xpath>
+					<value>
+						<costStuffCount>25</costStuffCount>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Deep Storage Plus</li>
+			<li>Deep Storage Plus (Continued)</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="DSP_Bin"]/researchPrerequisites/li</xpath>
+					<value>
+						<li>ComplexFurniture</li>
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>

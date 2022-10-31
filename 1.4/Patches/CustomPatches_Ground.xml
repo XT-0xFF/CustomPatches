@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!--Disable masssive annoying dirt sploshes-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ScatterableDef[@Name="SmearRoot"]/minSize</xpath>
+		<value>
+			<minSize>0</minSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ScatterableDef[@Name="SmearRoot"]/maxSize</xpath>
+		<value>
+			<maxSize>0</maxSize>
+		</value>
+	</Operation>
+
+	<!--Disable filth on Concrete floors-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/TerrainDef[defName="Concrete"]</xpath>
+		<value>
+			<filthAcceptanceMask>
+				<li>Unnatural</li>
+			</filthAcceptanceMask>
+		</value>
+	</Operation>
+
+	<!--Disable filth on Bridges-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/TerrainDef[defName="Bridge"]</xpath>
+		<value>
+			<filthAcceptanceMask>
+				<li>Unnatural</li>
+			</filthAcceptanceMask>
+		</value>
+	</Operation>
+	
+</Patch>

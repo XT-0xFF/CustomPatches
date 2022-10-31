@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	
+	<!--Reduce (Anima Tree [defName="Plant_TreeAnima"]) no-building radius-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef/comps/li[@Class="CompProperties_MeditationFocus"]/offsets/li[@Class="FocusStrengthOffset_ArtificialBuildings"]/radius</xpath>
+		<value>
+			<radius>9.9</radius>
+		</value>
+	</Operation>
+	
+	<!-- Make anima grass live much longer -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Plant_GrassAnima"]/plant/lifespanDaysPerGrowDays</xpath>
+		<value>
+			<lifespanDaysPerGrowDays>120</lifespanDaysPerGrowDays>
+		</value>
+	</Operation>
+	
+	<!-- Remove negative mood effects from expectations -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThoughtDef[defName="Expectations"]/stages/li[label="noble expectations" or label="royal expectations" or label="elite expectations" or label="supreme expectations"]/baseMoodEffect</xpath>
+		<value>
+			<baseMoodEffect>0</baseMoodEffect>
+		</value>
+	</Operation>
+	
+	<!-- Remove disabled work types from ideology roles -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/PreceptDef/roleDisabledWorkTags</xpath>
+		<value>
+			<roleDisabledWorkTags/>
+		</value>
+	</Operation>
+	
+	
+	<!-- Reduce biosculpter cyclce duration -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="BiosculpterPod"]/comps/li[key="medic"]/durationDays</xpath>
+		<value>
+			<durationDays>3</durationDays><!--6-->
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="BiosculpterPod"]/comps/li[key="bioregeneration"]/durationDays</xpath>
+		<value>
+			<durationDays>10</durationDays><!--25-->
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="BiosculpterPod"]/comps/li[key="ageReversal"]/durationDays</xpath>
+		<value>
+			<durationDays>4</durationDays><!--8-->
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="BiosculpterPod"]/comps/li[key="pleasure"]/durationDays</xpath>
+		<value>
+			<durationDays>2</durationDays><!--4-->
+		</value>
+	</Operation>
+	
+</Patch>
